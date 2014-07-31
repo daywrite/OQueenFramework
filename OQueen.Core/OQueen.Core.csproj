@@ -30,7 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,8 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Entity\CodeFirstDbContext.cs" />
+    <Compile Include="Data\Entity\DatabaseInitializer.cs" />
+    <Compile Include="Data\Entity\IEntityMapper.cs" />
+    <Compile Include="Data\Migrations\CreateDatabaseIfNotExistsWithSeed.cs" />
+    <Compile Include="Data\Migrations\ISeedAction.cs" />
+    <Compile Include="Data\Migrations\MigrationsConfiguration.cs" />
+    <Compile Include="Data\ModelConfigurations\DemoDetailConfiguration.cs" />
+    <Compile Include="Data\ModelConfigurations\DemoEntityConfiguration.cs" />
+    <Compile Include="Data\ModelConfigurations\EntityConfigurationBase.cs" />
+    <Compile Include="Data\ModelConfigurations\DemoEntitySeedAction.cs" />
+    <Compile Include="Data\ModelConfigurations\Seed\SeedAction.cs" />
+    <Compile Include="Data\Models\Entities\DemoDetail.cs" />
+    <Compile Include="Data\Models\Entities\DemoEntity.cs" />
+    <Compile Include="EntityBase.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

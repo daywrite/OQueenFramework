@@ -23,6 +23,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac.Integration.WebApi;
 using OQueen.WebApi.Ioc;
+using OQueen.Core.Data.Entity;
+using System.Reflection;
 namespace OQueen.WebApi
 {
     // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
@@ -38,9 +40,11 @@ namespace OQueen.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+ 
             //Autofac的注册
             Bootstrapper.Run();
+            //DataBase的生成
+            DatabaseInitializer.Initialize();
         }
     }
 }
