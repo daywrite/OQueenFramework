@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OQueen.Core", "OQueen.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OQueen.WebApi", "OQueen.WebApi\OQueen.WebApi.csproj", "{7E400C3E-2203-43B1-9248-34D8E8A232A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OQueen.Utility", "OQueen.Utility\OQueen.Utility.csproj", "{D0A2E6A4-1AEC-4047-9121-5136F225A233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OQueen.Application", "OQueen.Application\OQueen.Application.csproj", "{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +33,22 @@ Global
 		{7E400C3E-2203-43B1-9248-34D8E8A232A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E400C3E-2203-43B1-9248-34D8E8A232A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E400C3E-2203-43B1-9248-34D8E8A232A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A2E6A4-1AEC-4047-9121-5136F225A233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A2E6A4-1AEC-4047-9121-5136F225A233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A2E6A4-1AEC-4047-9121-5136F225A233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A2E6A4-1AEC-4047-9121-5136F225A233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AA41D0EF-E095-4948-BF30-45720A76AE17} = {F4ED0409-3A8B-463F-BF17-6464F29F624B}
+		{D0A2E6A4-1AEC-4047-9121-5136F225A233} = {F4ED0409-3A8B-463F-BF17-6464F29F624B}
 		{7E400C3E-2203-43B1-9248-34D8E8A232A6} = {7B6FB9C3-21B4-46E7-B6E2-CE386D39D366}
+		{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599} = {7B6FB9C3-21B4-46E7-B6E2-CE386D39D366}
 	EndGlobalSection
 EndGlobal

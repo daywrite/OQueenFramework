@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 
 namespace OQueen.Core.Data.Entity
 {
-    public class CodeFirstDbContext : DbContext
+    public class CodeFirstDbContext : DbContext, IUnitOfWork, IDependency
     {
         public CodeFirstDbContext()
             : base(ConfigurationManager.AppSettings["ConnectionStringName"])

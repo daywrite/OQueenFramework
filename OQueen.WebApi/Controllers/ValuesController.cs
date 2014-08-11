@@ -1,6 +1,10 @@
-﻿using OQueen.Core;
+﻿using OQueen.Application;
+using OQueen.Core;
+using OQueen.Core.Data.Entity;
+using OQueen.Core.Data.Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,15 +15,24 @@ namespace OQueen.WebApi.Controllers
     public class ValuesController : ApiController
     {
         private readonly ITestContract _testContract;
-        public ValuesController(ITestContract testContract)
+        //private static IUnitOfWork u = new CodeFirstDbContext();
+        //private static IRepository<DemoEntity, int> _demoEntityRepository = new Repository<DemoEntity, int>(u);
+        //private static IRepository<DemoDetail, Guid> _demoDetailRepository = new Repository<DemoDetail, Guid>(u);
+        //private IDemoContract _demoContract = new DemoService(_demoEntityRepository, _demoDetailRepository);
+        //private readonly IDemoContract _demoContract;
+        private readonly ITest _test;
+        public ValuesController(ITestContract testContract, ITest test)
         {
             _testContract = testContract;
+            //_demoContract = demoContract;
+            _test = test;
         }
 
         // GET api/values
         public IEnumerable<string> Get()
         {
             string value = _testContract.GetString();
+            string v = _test.GetString();
             return new string[] { "value1", value };
         }
 

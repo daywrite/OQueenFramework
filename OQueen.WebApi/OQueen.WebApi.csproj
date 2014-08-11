@@ -302,6 +302,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OQueen.Application\OQueen.Application.csproj">
+      <Project>{02d2f571-7aa1-4bb5-afc2-addf4b73d599}</Project>
+      <Name>OQueen.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OQueen.Core\OQueen.Core.csproj">
       <Project>{aa41d0ef-e095-4948-bf30-45720a76ae17}</Project>
       <Name>OQueen.Core</Name>

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OQueen.Core.Data.ModelConfigurations
+namespace OQueen.Core.Data.ModelConfigurations.Seed
 {
     public class DemoEntitySeedAction : ISeedAction
     {

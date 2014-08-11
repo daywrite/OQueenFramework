@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA41D0EF-E095-4948-BF30-45720A76AE17}</ProjectGuid>
+    <ProjectGuid>{02D2F571-7AA1-4BB5-AFC2-ADDF4B73D599}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OQueen.Core</RootNamespace>
-    <AssemblyName>OQueen.Core</AssemblyName>
+    <RootNamespace>OQueen.Application</RootNamespace>
+    <AssemblyName>OQueen.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,34 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Entity\CodeFirstDbContext.cs" />
-    <Compile Include="Data\Entity\DatabaseInitializer.cs" />
-    <Compile Include="Data\Entity\DataHelper.cs" />
-    <Compile Include="Data\Entity\IEntityMapper.cs" />
-    <Compile Include="Data\Entity\Repository.cs" />
-    <Compile Include="Data\Entity\Extensions\DbContextExtensions.cs" />
-    <Compile Include="Data\Infrastructure\ServiceBase.cs" />
-    <Compile Include="Data\Migrations\CreateDatabaseIfNotExistsWithSeed.cs" />
-    <Compile Include="Data\Migrations\ISeedAction.cs" />
-    <Compile Include="Data\Migrations\MigrationsConfiguration.cs" />
-    <Compile Include="Data\ModelConfigurations\DemoDetailConfiguration.cs" />
-    <Compile Include="Data\ModelConfigurations\DemoEntityConfiguration.cs" />
-    <Compile Include="Data\ModelConfigurations\EntityConfigurationBase.cs" />
-    <Compile Include="Data\ModelConfigurations\Seed\DemoEntitySeedAction.cs" />
-    <Compile Include="Data\ModelConfigurations\Seed\SeedAction.cs" />
-    <Compile Include="Data\Models\Entities\DemoDetail.cs" />
-    <Compile Include="Data\Models\Entities\DemoEntity.cs" />
-    <Compile Include="EntityBase.cs" />
-    <Compile Include="IDependency.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="DemoService.cs" />
+    <Compile Include="IDemoContract.cs" />
+    <Compile Include="ITest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\OQueen.Core\OQueen.Core.csproj">
+      <Project>{aa41d0ef-e095-4948-bf30-45720a76ae17}</Project>
+      <Name>OQueen.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OQueen.Utility\OQueen.Utility.csproj">
       <Project>{d0a2e6a4-1aec-4047-9121-5136f225a233}</Project>
       <Name>OQueen.Utility</Name>

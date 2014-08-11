@@ -7,6 +7,8 @@ using Autofac.Integration.WebApi;
 using System.Web.Http;
 using System.Reflection;
 using OQueen.Core;
+using OQueen.Application;
+using OQueen.Core.Data.Entity;
 namespace OQueen.WebApi.Ioc
 {
     /// <summary>
@@ -28,11 +30,12 @@ namespace OQueen.WebApi.Ioc
             var builder = new ContainerBuilder();
 
             var baseType = typeof(IDependency);
-
+            var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
             // Register API controllers using assembly scanning.
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            //builder.RegisterType<OQueen.WebApi.Controllers.ValuesController.TestService>().As<OQueen.WebApi.Controllers.ValuesController.ITestContract>().InstancePerApiRequest();
-            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+            builder.RegisterApiControllers(assemblys.ToArray());
+            //builder.RegisterType<DemoService>().As<IDemoContract>().InstancePerApiRequest();
+            //builder.RegisterType<CodeFirstDbContext>().As<IUnitOfWork>().InstancePerApiRequest();
+            builder.RegisterAssemblyTypes(assemblys.ToArray())
                 .Where(t => baseType.IsAssignableFrom(t) && t != baseType)
                 .AsImplementedInterfaces().InstancePerLifetimeScope();
 
